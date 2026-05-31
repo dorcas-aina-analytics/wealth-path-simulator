@@ -387,17 +387,29 @@ fig.add_trace(go.Scatter(
 ))
 
 fig.update_layout(
-    title=dict(text=f"Wealth Growth Over {years} Years — Three Paths",
-               font=dict(color=OLIVE, size=16, family="Arial"), x=0.01),
-    paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+    title=dict(
+        text=f"Wealth Growth Over {years} Years - Three Paths",
+        font=dict(color=OLIVE, size=16, family="Arial"),
+        x=0.01
+    ),
+    paper_bgcolor="rgba(0,0,0,0)",
+    plot_bgcolor="rgba(0,0,0,0)",
     font=dict(color=DARK_TEXT, family="Arial"),
-    xaxis=dict(title="Years from now", gridcolor=CHART_GRID, showgrid=True,
-               zeroline=False, tickfont=dict(color=DARK_TEXT), titlefont=dict(color=DARK_TEXT)),
-    yaxis=dict(title="Portfolio Value (£)", gridcolor=CHART_GRID, showgrid=True,
-               zeroline=False, tickprefix="£", tickformat=",.0f",
-               tickfont=dict(color=DARK_TEXT), titlefont=dict(color=DARK_TEXT)),
+    xaxis=dict(
+        title=dict(text="Years from now", font=dict(color=DARK_TEXT)),
+        gridcolor=CHART_GRID, showgrid=True, zeroline=False,
+        tickfont=dict(color=DARK_TEXT),
+    ),
+    yaxis=dict(
+        title=dict(text="Portfolio Value", font=dict(color=DARK_TEXT)),
+        gridcolor=CHART_GRID, showgrid=True, zeroline=False,
+        tickprefix="£", tickformat=",.0f",
+        tickfont=dict(color=DARK_TEXT),
+    ),
     legend=dict(bgcolor="rgba(0,0,0,0)", bordercolor=BORDER, font=dict(color=DARK_TEXT)),
-    margin=dict(l=60, r=20, t=60, b=60), hovermode="x unified", height=450,
+    margin=dict(l=60, r=20, t=60, b=60),
+    hovermode="x unified",
+    height=450,
 )
 st.plotly_chart(fig, use_container_width=True)
 
