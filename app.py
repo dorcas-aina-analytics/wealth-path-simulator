@@ -572,6 +572,7 @@ with goal_col1:
     )
 
 with goal_col2:
+    st.markdown("<div style='margin-top:2.1rem;'></div>", unsafe_allow_html=True)
     req1 = required_monthly(target_pot, RETURN_ASSUMPTIONS["savings_account"], target_years, current_savings)
     req2 = required_monthly(target_pot, RETURN_ASSUMPTIONS["stocks_isa"],      target_years, current_savings)
     req3 = required_monthly(target_pot, RETURN_ASSUMPTIONS["optimised"],       target_years, current_savings)
